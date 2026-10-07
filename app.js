@@ -1,11 +1,11 @@
 /* BELIVZO MASTER JAVASCRIPT (Firebase Integrated & Case-Insensitive Filter Fixed) */
 
-// ১. Firebase Configuration & Initialization
+// ১. Firebase Configuration & Initialization (Corrected Domain & Credentials)
 const firebaseConfig = {
   apiKey: "AIzaSyA4as297Sk35tTVqSQyOUztD5Vg9sV0Oy8",
-  authDomain: "BELIVZO-ba1af.firebaseapp.com",
-  projectId: "BELIVZO-ba1af",
-  storageBucket: "BELIVZO-ba1af.firebasestorage.app",
+  authDomain: "fenex-ba1af.firebaseapp.com",
+  projectId: "fenex-ba1af",
+  storageBucket: "fenex-ba1af.firebasestorage.app",
   messagingSenderId: "506989870286",
   appId: "1:506989870286:web:75b50258542b88b443e49f"
 };
@@ -176,7 +176,7 @@ function loadCategoryProducts() {
   fetchFirebaseProducts((allProducts) => {
     const urlParams = new URLSearchParams(window.location.search);
     
-    // URL থেকে ভ্যালু নেওয়ার সময় ছোট হাতের অক্ষরে এবং স্পেস/হাইফেন ক্লিন করে নেওয়া
+    // URL থেকে ভ্যালু নেওয়ার সময় ছোট হাতের অক্ষরে এবং স্পেস/হাইফেন ক্লিন করে নেওয়া
     const selectedGender = (urlParams.get('gender') || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
     const selectedCategory = (urlParams.get('category') || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
 
