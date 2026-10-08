@@ -95,15 +95,16 @@
   </div>
 
   <script>
-    // ১. Firebase কনফিগারেশন
+    // ১. Firebase কনফিগারেশন (সংশোধিত authDomain ও storageBucket)
     const firebaseConfig = {
       apiKey: "AIzaSyA4as297Sk35tTVqSQyOUztD5Vg9sV0Oy8",
-      authDomain: "BELIVZO-ba1af.firebaseapp.com",
-      projectId: "BELIVZO-ba1af",
-      storageBucket: "BELIVZO-ba1af.firebasestorage.app",
+      authDomain: "fenex-ba1af.firebaseapp.com",
+      projectId: "fenex-ba1af",
+      storageBucket: "fenex-ba1af.firebasestorage.app",
       messagingSenderId: "506989870286",
       appId: "1:506989870286:web:75b50258542b88b443e49f"
     };
+
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
@@ -136,7 +137,7 @@
     });
 
     firebase.auth().getRedirectResult().then((result) => {
-      if (result.user) {
+      if (result && result.user) {
         redirectUser(result.user);
       }
     }).catch((error) => {
@@ -191,7 +192,7 @@
         });
     });
 
-    // Google Sign-In Logic (Mobile Friendly Popup Fallback to Redirect)
+    // Google Sign-In Logic
     function loginWithGoogle() {
       const provider = new firebase.auth.GoogleAuthProvider();
       
